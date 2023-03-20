@@ -1,4 +1,4 @@
-package medevil.ai;
+package medevil.ai.client;
 
 import javax.swing.*;
 import java.awt.*;
