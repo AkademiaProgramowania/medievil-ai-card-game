@@ -13,9 +13,13 @@ import static medevil.ai.client.GuiParams.*;
 
 public class GameView implements MouseListener {
     private final Player player;
+    private  PlayerView playerView;
 
     public GameView(Player player) {
         this.player = player;
+        int startX = WIDTH / 11;
+        int startY = HEIGHT / 3;
+        playerView = new PlayerView(player,startX,startY);
     }
 
     public void tick() {
@@ -23,9 +27,10 @@ public class GameView implements MouseListener {
     }
 
     public void render(Graphics2D g) {
+        playerView.render(g);
+      /*
         List<Card> hand = player.getHand();
-        int startX = WIDTH / 11;
-        int startY = HEIGHT / 3;
+
 
         Font font = g.getFont();
         Font biggerFont = font.deriveFont(font.getSize() * 1.8f);
@@ -39,7 +44,7 @@ public class GameView implements MouseListener {
             int stringY = startY + (CARD_HEIGHT / 2) + (int) (stringBounds.getHeight() / 2);
             g.drawString(text, stringX, stringY);
             startX += (int) (CARD_WIDTH * 1.5);
-        }
+        }*/
     }
 
     @Override
